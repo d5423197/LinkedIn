@@ -34,7 +34,7 @@ class MinHeap:
             else:
                 return i * 2
 
-    def deleteMin(self):
+    def getMin(self):
         minimum = self.heapList[1]
         self.heapList[1] = self.heapList[-1]
         self.currentSize-=1
@@ -44,8 +44,12 @@ class MinHeap:
 
     def __repr__(self):
         return str(self.heapList)
+
 test = [9, 6, 5, 2, 3, 10, 20, -1]
 obj = MinHeap(input = test)
 print(obj)
 obj.add(-50)
 print(obj)
+min_output = obj.getMin()
+print(min_output)
+print(f'After getmin, the heap list is:{obj}')
